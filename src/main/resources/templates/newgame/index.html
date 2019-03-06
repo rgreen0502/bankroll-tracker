@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+
+<table class="table">
+
+    <tr>
+        <th>Date</th>
+        <th>Location</th>
+        <th>Stakes</th>
+        <th>BuyIn</th>
+        <th>CashOut</th>
+    </tr>
+
+    <tr th:each="newgame : ${newgames}">
+        <td th:text="${newgame.date}"></td>
+        <td th:text="${newgame.location}"></td>
+        <td th:text="${newgame.stakes}"></td>
+        <td th:text="${newgame.buyin}"></td>
+        <td th:text="${newgame.cashout}"></td>
+    </tr>
+
+</table>
+
+
+<a href="/newgame/add">Add</a>
+</body>
+</html>

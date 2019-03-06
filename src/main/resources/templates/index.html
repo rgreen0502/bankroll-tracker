@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<head th:replace="fragments :: head"></head>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<body>
+    <h1 th:text="${title}"></h1>
+
+    <h1>0.00</h1>
+
+    <table class="table">
+
+        <tr>
+            <th>Goal</th>
+            <th>Progress</th>
+            <th>Total Change</th>
+        </tr>
+
+        <tr th:each="cheese : ${cheeses}">
+            <td th:text="${cheese.name}"></td>
+            <td th:text="${cheese.description}"></td>
+            <td th:text="${cheese.category.name}"></td>
+        </tr>
+
+    </table>
+
+    <a href="/newgame">New Game</a>  |
+    <a href="/oldgame">Old Game</a>  |
+    <a href="/add">Add to Bankroll</a>
+
+</body>
+</html>

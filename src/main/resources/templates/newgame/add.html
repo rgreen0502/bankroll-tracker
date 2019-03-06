@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<form method="post" style="max-width:600px;" th:object="${newgame}">
+    <div class="form-group">
+        <label th:for="date">Date</label>
+        <input class="form-control" th:field="*{date}" />
+        <span th:errors="*{date}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <label th:for="location">Location</label>
+        <input class="form-control" th:field="*{location}" />
+        <span th:errors="*{location}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <label th:for="stakes">Stakes</label>
+        <input class="form-control" th:field="*{stakes}" />
+        <span th:errors="*{stakes}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <label th:for="buyin">BuyIn</label>
+        <input class="form-control" th:field="*{buyin}" />
+        <span th:errors="*{buyin}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <label th:for="cashout">Cashout</label>
+        <input class="form-control" th:field="*{cashout}" />
+        <span th:errors="*{cashout}" class="error"></span>
+    </div>
+    <input type="submit" value="Add New Game" />
+</form>
+
+</body>
+</html>

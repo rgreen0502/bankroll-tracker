@@ -23,7 +23,7 @@ public class NewgameController {
     @RequestMapping(value="")
     public String index(Model model){
         model.addAttribute("newgames", newgameDao.findAll());
-        model.addAttribute("title", "My Newgames");
+        model.addAttribute("title", "My Games");
 
         return "newgame/index";
     }

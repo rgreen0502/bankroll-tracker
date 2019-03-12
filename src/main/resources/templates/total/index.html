@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<head th:replace="fragments :: head"></head>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<body>
+
+<h1 th:text="${title}"></h1>
+
+<table class="table">
+
+    <tr>
+        <th><h1>Total</h1></th>
+    </tr>
+
+    <tr th:each="total : ${totals}">
+        <td th:text="${total.bank}"><h1></h1></td>
+    </tr>
+
+</table>
+
+<a href="/newgame">New Game</a>  |
+<a href="/bankroll/add">Add to Goals</a>  |
+<a href="/total/add">Add to Bankroll</a>
+</body>
+</html>

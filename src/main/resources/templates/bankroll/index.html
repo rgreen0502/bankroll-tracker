@@ -8,27 +8,23 @@
 <body>
     <h1 th:text="${title}"></h1>
 
-    <h1>0.00</h1>
 
     <table class="table">
 
         <tr>
             <th>Goal</th>
             <th>Progress</th>
-            <th>Total Change</th>
         </tr>
 
-        <tr th:each="cheese : ${cheeses}">
-            <td th:text="${cheese.name}"></td>
-            <td th:text="${cheese.description}"></td>
-            <td th:text="${cheese.category.name}"></td>
+        <tr th:each="bankroll : ${bankrolls}">
+            <td th:text="${bankroll.goal}"></td>
+            <td th:text="${bankroll.progress}"></td>
         </tr>
 
     </table>
 
     <a href="/newgame">New Game</a>  |
-    <a href="/oldgame">Old Game</a>  |
-    <a href="/add">Add to Bankroll</a>
+    <a href="/bankroll/add">Add to Goals</a>
 
 </body>
 </html>

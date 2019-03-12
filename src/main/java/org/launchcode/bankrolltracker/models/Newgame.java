@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
@@ -22,15 +23,15 @@ public class Newgame {
     private String location;
 
     @NotNull
-    private Double stakes;
+    private BigDecimal stakes;
 
     @NotNull
-    private Double buyin;
+    private BigDecimal buyin;
 
     @NotNull
-    private Double cashout;
+    private BigDecimal cashout;
 
-    public Newgame(int id, Date date, String location,  Double stakes,  Double buyin, Double cashout) {
+    public Newgame(int id, Date date, String location, BigDecimal stakes, BigDecimal buyin, BigDecimal cashout) {
         this.id = id;
         this.date = date;
         this.location = location;
@@ -44,6 +45,10 @@ public class Newgame {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Date getDate() {
@@ -62,27 +67,27 @@ public class Newgame {
         this.location = location;
     }
 
-    public Double getStakes() {
+    public BigDecimal getStakes() {
         return stakes;
     }
 
-    public void setStakes(Double stakes) {
+    public void setStakes(BigDecimal stakes) {
         this.stakes = stakes;
     }
 
-    public Double getBuyin() {
+    public BigDecimal getBuyin() {
         return buyin;
     }
 
-    public void setBuyin(Double buyin) {
+    public void setBuyin(BigDecimal buyin) {
         this.buyin = buyin;
     }
 
-    public Double getCashout() {
+    public BigDecimal getCashout() {
         return cashout;
     }
 
-    public void setCashout(Double cashout) {
+    public void setCashout(BigDecimal cashout) {
         this.cashout = cashout;
     }
 }
